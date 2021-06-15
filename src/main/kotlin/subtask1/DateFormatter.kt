@@ -3,32 +3,6 @@ package subtask1
 import java.time.DateTimeException
 import java.time.LocalDate
 
-//class DateFormatter {
-
-    /*
-Задача:
-        Реализуйте метод, который по числу, месяцу и году определяет день недели и возвращает его в правильном падеже.
-
-        Пример:
-
-        - Входные данные: 17 11 2020
-        - Выходная строка: 17 ноября, вторник
-</br></br>
-
-        - Входные данные: 18 3 2019
-        - Выходная строка: 18 марта, понедельник
-</br></br>
-
-        - Входные данные: 29 2 2017
-        - Выходная строка: Такого дня не существует
-</br></br>
-*/
-   /* fun toTextDay(day: String, month: String, year: String): String {
-        throw NotImplementedError("Not implemented")
-    }*/
-//}
-
-
 class DateFormatter {
     fun toTextDay(day: String, month: String, year: String): String {
         val result: String
