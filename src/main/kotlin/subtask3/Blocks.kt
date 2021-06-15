@@ -1,41 +1,47 @@
 package subtask3
 
 import kotlin.reflect.KClass
-
-import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.time.LocalDate
+
 
 class Blocks {
 
     fun getData(blockA: Array<*>, blockB: KClass<*>): Any {
+
         when (blockB) {
+            //for Int obj
             Int::class -> {
-                var s = 0
+                var sum = 0
                 for (i in blockA) {
                     if (i is Int) {
-                        s += i
+                        sum += i
                     }
                 }
-                return s
+                return sum
             }
+            //for String obj
             String::class -> {
-                var s = ""
+                var concat = ""
                 for (i in blockA) {
                     if (i is String) {
-                        s += i
+                        concat += i
                     }
                 }
-                return s
+                return concat
             }
+            // for LocalDate obj
             LocalDate::class -> {
-                val s = arrayListOf<LocalDate>()
+                val dateArray = arrayListOf<LocalDate>()
                 for (i in blockA) {
                     if (i is LocalDate) {
-                        s.add(i)
+                        dateArray.add(i)
                     }
                 }
-                return s[s.size - 1].plusDays(1).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                return dateArray[dateArray.size - 1].plusDays(1).
+                format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
             }
+            //remaining cases
             else -> {
                 return ""
             }
